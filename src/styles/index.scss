@@ -1,0 +1,66 @@
+@use "./auxil/utils";
+@use "./auxil/vars";
+// Globals
+:root, * {
+	color: white;
+	font-family: vars.$font;
+	::selection {
+        color: black;
+        background-color: white;
+    }
+}
+
+html, body, div#root {
+	width: 100%;
+	height: 100%;
+
+	padding: 0;
+	margin: 0;
+
+	background-color: vars.$color-background-app;
+}
+
+div#root {
+	display: grid;
+	grid-template-columns: min-content;
+	grid-template-rows: 1fr min-content;
+	grid-template-areas: "a b" "a c";
+
+	> aside {
+		grid-area: a;
+		background-color: vars.$color-background-app;
+	}
+	
+	> main {
+		grid-area: b;
+
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		overflow: hidden;
+
+		background-color: vars.$color-background-app;
+	}
+
+	> footer {
+		height: 2rem;
+		grid-area: c;
+		background-color: vars.$color-background-darkest;
+	}
+}
+
+.divider {
+    margin: 0;
+
+    border: none;
+    background-color: vars.$color-background-darkest;
+
+	&.vertical {
+		width: 5px;
+    	height: 100%;
+	}
+
+	&.horizontal {
+		width: 100%;
+    	height: 5px;
+	}
+}

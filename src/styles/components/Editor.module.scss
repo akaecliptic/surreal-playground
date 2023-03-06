@@ -1,0 +1,57 @@
+@use "../auxil/vars";
+@use "../auxil/utils";
+
+#container {
+    display: grid;
+    grid-template-areas: "a b" "c c";
+    grid-template-rows: auto min-content;
+    grid-template-columns: 1.5rem auto;
+
+    position: relative;
+
+    > textarea {
+        height: 100%;
+        resize: none;
+
+        font-size: 1rem;
+        
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+    }
+}
+
+#numberline {
+    grid-area: a;
+    padding: 1rem 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: vars.$color-background-dark;
+}
+
+#editor {
+    grid-area: b;
+    padding: 1rem .5rem;
+    background-color: vars.$color-background-darkest;
+
+    @include utils.scrollable;
+}
+
+#bottom {
+    grid-area: c;
+    display: flex;
+    column-gap: .5rem;
+    flex-direction: row-reverse;
+
+    padding: .2rem;
+
+    background-color: vars.$color-background-darkest;
+
+    > button {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        
+        @include utils.button;
+    }
+}

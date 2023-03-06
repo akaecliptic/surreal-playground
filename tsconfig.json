@@ -1,0 +1,38 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"skipLibCheck": true,
+		"types": ["vite/client"],
+
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+
+		"module": "esnext",
+		"isolatedModules": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+
+		"noEmit": true,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+
+		"strict": true,
+		"noImplicitAny": true,
+		"forceConsistentCasingInFileNames": true,
+		"strictFunctionTypes": true,
+
+		"noUnusedLocals": true,
+		"noImplicitReturns": true,
+		"noUnusedParameters": true,
+
+		"baseUrl": "./src"
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
+}

@@ -1,0 +1,20 @@
+@use "../auxil/vars";
+@use "../auxil/utils";
+
+#container {
+    height: 2rem;
+    display: flex;
+
+    > input {
+       @include utils.input;
+    }
+
+    > button {
+        width: fit-content;
+
+        display: grid;
+        place-items: center;
+
+        @include utils.button;
+    }
+}

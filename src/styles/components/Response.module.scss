@@ -1,0 +1,20 @@
+@use "../auxil/vars";
+@use "../auxil/utils";
+
+#container {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.output {
+    height: 100%;
+
+    margin: 0;
+    padding: 1rem;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    
+    background-color: vars.$color-background-app;
+    
+    @include utils.scrollable;
+}
