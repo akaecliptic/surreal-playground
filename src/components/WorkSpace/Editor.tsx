@@ -37,8 +37,19 @@ const Editor: Component = () => {
         setSelected(() => (highlighted) ? highlighted.toString() : '');
     };
 
-    onMount( () => document.addEventListener( 'selectionchange', clearHighlight ) );
-    onCleanup( () => document.removeEventListener( 'selectionchange', clearHighlight ) );
+    const hotKey = (event: KeyboardEvent) => {
+        if ( event.ctrlKey && event.key === 'Enter' && lines() ) run(selected() || lines());
+    };
+
+    onMount( () => {
+        document.addEventListener( 'selectionchange', clearHighlight );
+        window.addEventListener( 'keydown', hotKey );
+    });
+    
+    onCleanup( () => {
+        document.removeEventListener( 'selectionchange', clearHighlight );
+        window.removeEventListener( 'keydown', hotKey );
+    });
 
     createEffect( () => {
         const count: number[] = [];
